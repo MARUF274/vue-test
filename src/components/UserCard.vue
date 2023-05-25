@@ -3,7 +3,10 @@
 
 <div class="card-body text-center">
   <h5 class="card-title">{{ profile }}</h5>
-  <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="my-5">
+  <a href="/supplier" class="btn col-12 my-3 btn-primary">Supplier</a>
+  <a href="/home" class="btn col-12 my-3 btn-primary">Home</a>
+  </div>
 </div>
 </div>
 </template>

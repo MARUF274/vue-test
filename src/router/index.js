@@ -26,6 +26,11 @@ const routes = [
     name: 'CreateBarang',
     component: () => import('../views/CreateBarang.vue'),
   },
+  {
+    path: '/edit-barang/:id',
+    name: 'EditBarang',
+    component: () => import('../views/EditBarang.vue'),
+  }
 ];
 
 const router = createRouter({

@@ -114,31 +114,17 @@
       }
     },
     methods: {
-
+      editItem(id) {
+        // Route to '/edit-barang' with the id parameter
+        console.log(id);
+        this.$router.push({
+          name: 'EditBarang',
+          params: {
+            id
+          }
+        });
+      }
     }
 
   }
 </script>
-
-<!-- // <template>
-//   <div>
-//     <h2>Welcome, {{ user.username }}</h2>
-//     <button @click="logout">Logout</button>
-//   </div>
-// </template> -->
-
-<!-- // <script> -->
-<!-- // export default {
-//   computed: {
-//     user() {
-//       return this.$store.state.user;
-//     },
-//   },
-//   methods: {
-//     logout() {
-//       this.$store.dispatch('logout');
-//       this.$router.push('/login'); // Redirect to the login page
-//     },
-//   },
-// };
-</script> -->
