@@ -58,7 +58,6 @@
                     alamat.value = supplier.alamat;
                     noTelp.value = supplier.noTelp;
 
-                    console.log(`Find:`, barang);
                 })
                 .catch(error => {
                     console.log(error);
@@ -72,16 +71,10 @@
 
         },
         methods: {
-            editBarang(event) {
+            editSupplier(event) {
                 event.preventDefault(); // Prevent form submission
 
-                // Retrieve the selected supplier object
-                const selectedSupplier = this.datasSupplier.find(supplier => supplier.id === this.selectedSupplier);
-
-                if (selectedSupplier) {
-                    const parsedSupplier = JSON.parse(JSON.stringify(selectedSupplier));
-
-                    const url = "http://159.223.57.121:8090/";
+                const url = "http://159.223.57.121:8090/";
                     let token = localStorage.getItem('token');
                     const customConfig = {
                         headers: {
@@ -91,24 +84,20 @@
                         }
                     };
                     const payload = {
-                        namaBarang: this.namaBarang,
-                        harga: this.harga,
-                        stok: this.stok,
-                        supplier: parsedSupplier
-                        // supplier: parsedSupplier
+                        namaSupplier: this.namaSupplier,
+                        alamat: this.alamat,
+                        noTelp: this.noTelp,
                     };
-                    // const id = useRoute().params.id;
-                    // console.log(this.id)
                     let id = this.id
                     console.log(payload)
-                    axios.put(`${url}barang/update/${id}`, payload, customConfig)
+                    axios.put(`${url}supplier/update/${id}`, payload, customConfig)
                         .then(response => {
-                            this.$router.push('/home');
+                            this.$router.push('/supplier');
                         })
                         .catch(error => {
                             console.log(error);
                         });
-                }
+
             }
         }
     };
