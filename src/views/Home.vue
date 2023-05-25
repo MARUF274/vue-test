@@ -6,7 +6,7 @@
     </div>
     <div class="py-5 col-9 d-flex">
       <div class="col-12">
-        <button on></button>
+        <a href="/create-barang" class="btn pull-right my-3 btn-primary">Tambah Barang</a>
         <table class="table table table-striped">
           <thead>
             <tr>

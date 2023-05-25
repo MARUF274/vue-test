@@ -4,8 +4,9 @@
         <!-- //card -->
         <UserCard :profile="profile"></UserCard>
       </div>
-      <div class="py-5 col-9 text-center d-flex">
+      <div class="py-5 col-9 d-flex">
         <div class="col-12">
+            <a href="/create-Supplier" class="btn pull-right my-3 btn-primary">Tambah Supplier</a>
           <table class="table table table-striped">
             <thead>
               <tr>

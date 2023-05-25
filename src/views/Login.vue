@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+  <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-10">
         <div class="wrap justify-content-center d-md-flex">
@@ -40,62 +40,43 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      username: '',
-      password: '',
-    };
-  },
-  methods: {
-    login() {
-      this.$store.dispatch('login', {
-        username: this.username,
-        password: this.password,
-      }).then(() => {
-        // this.$router.push('/home'); // Redirect to the home page
-        console.log("aaaaaaaa")
-      });
-    },
-  },
-};
-</script>
-
-<!-- <script>
-import axios from 'axios'
-
-export default {
-    name: 'Login',
+  import axios from 'axios'
+  export default {
+    name: "Login",
     data() {
       return {
-        form: {
-          username: '',
-          profileName: '',
-          password: ''
-        }
-      }
+        username: '',
+        password: '',
+      };
     },
     methods: {
-      submitForm(event) {
-        event.preventDefault()
+      login(event) {
 
-        const url = 'http://159.223.57.121:8090/auth/register'
-        const payload = {
-          username: this.form.username,
-          password: this.form.password,
-          profileName: this.form.profileName
+        event.preventDefault(); // Prevent form submission
+
+        const url = "http://159.223.57.121:8090/"
+        const customConfig = {
+          headers: {
+            'Content-Type': 'application/json',
+          }
         }
-
-        axios.post(url, payload)
+        const payload = {
+          username: this.username, //string
+          password: this.password, //string
+        };
+        console.log(payload)
+        axios.post(`${url}auth/login`, payload, customConfig)
           .then(response => {
-            console.log(response.data)
-            // Handle the response
+            let token = response.data.data.token
+            localStorage.setItem('token', token)
+            this.$router.push('/home');
           })
           .catch(error => {
             console.log(error)
-            // Handle the error
           })
+
       }
-    }
+    },
+
   }
-</script> -->
+</script>
