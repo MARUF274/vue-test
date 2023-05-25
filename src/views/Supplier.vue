@@ -108,7 +108,16 @@
         }
       },
       methods: {
-  
+        editItem(id) {
+        // Route to '/edit-barang' with the id parameter
+        console.log(id);
+        this.$router.push({
+          name: 'EditSupplier',
+          params: {
+            id
+          }
+        });
+      }
       }
   
     }

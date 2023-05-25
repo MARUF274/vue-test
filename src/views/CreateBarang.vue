@@ -108,7 +108,6 @@
                 if (selectedSupplier) {
                     const parsedSupplier = JSON.parse(JSON.stringify(selectedSupplier));
                     // Perform actions with the selected supplier
-                    console.log('Selected Supplier:', selectedSupplier);
                     const url = "http://159.223.57.121:8090/"
                     let token = localStorage.getItem('token')
                     const customConfig = {

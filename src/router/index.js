@@ -30,7 +30,17 @@ const routes = [
     path: '/edit-barang/:id',
     name: 'EditBarang',
     component: () => import('../views/EditBarang.vue'),
-  }
+  },
+  {
+    path: '/create-supplier',
+    name: 'CreateSupplier',
+    component: () => import('../views/CreateSupplier.vue'),
+  },
+  {
+    path: '/edit-supplier/:id',
+    name: 'EditSupplier',
+    component: () => import('../views/EditSupplier.vue'),
+  },
 ];
 
 const router = createRouter({
